@@ -1,8 +1,8 @@
 {
-  "name": "dotbit",
-  "version": "0.4.17",
+  "name": "dotbit-sdk-allin",
+  "version": "0.4.19",
   "description": "A complete .bit SDK and utilities in TypeScript",
-  "author": "Jeff Jing <https://github.com/zgayjjf>",
+  "author": "tengyu",
   "license": "MIT",
   "main": "lib/index.js",
   "module": "lib.esm/index.js",
@@ -13,13 +13,13 @@
   "scripts": {
     "test": "jest",
     "clear": "rm -rf ./lib/ ./lib.esm/",
-    "build": "npm run clear && npm run build:esm && npm run build:commonjs",
+    "build": "npm run build:esm && npm run build:commonjs",
     "build:commonjs": "tsc -p tsconfig.build.json",
     "build:esm": "tsc -p tsconfig.build.esm.json",
     "dev:browser": "npm run build && vite ./example/browser",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
-    "prepublishOnly": "npx only-allow pnpm && npm run build",
+    "prepublishOnly": "npx only-allow npm && npm run build",
     "slip44": "npm i bip44-constants@latest -D && node scripts/slip44-json.js",
     "character": "node scripts/get_character_list.js"
   },
@@ -46,8 +46,8 @@
     "url": "https://github.com/dotbitHQ/dotbit.js/issues"
   },
   "devDependencies": {
-    "@linkdesu/moleculejs": "^1.1.1",
     "@ensdomains/ensjs": "^2.1.0",
+    "@linkdesu/moleculejs": "^1.1.1",
     "@types/jest": "^28.1.2",
     "@types/node": "^18.0.0",
     "bip44-constants": "latest",
@@ -61,7 +61,6 @@
     "vite": "^2.9.14"
   },
   "dependencies": {
-    "@ensdomains/address-encoder": "^0.2.18",
     "@ethersproject/providers": "^5.7.2",
     "@metamask/eth-sig-util": "^5.0.2",
     "blake2b": "^2.1.4",
@@ -69,6 +68,7 @@
     "ethers": "^5.6.9",
     "grapheme-splitter": "^1.0.4",
     "jest-environment-jsdom": "^29.3.1",
+    "tronweb": "^5.1.0",
     "type-fest": "^2.16.0"
   }
 }
